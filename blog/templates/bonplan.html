@@ -6,9 +6,10 @@
 {% endblock %}
 {% block content %}
 
-<h3>
-  {{ bonplan.date|date:"DATE_FORMAT" }}
-</h3>
+<h3> Auteur : {{ bonplan.Auteur }}</h3>
+<h3> Date : {{ bonplan.date|date:"DATE_FORMAT" }} </h3>
+<h3> Type : {{ bonplan.type}} </h3>
+<h3> Adresse : {{ bonplan.adresse}} </h3>
 
 <div class="article-content">
   {{ bonplan.contenu|linebreaks }}

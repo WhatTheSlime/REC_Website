@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 <h2>Nos Bon-Plans</h2>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+<p>Tout nos conseils et bon-plans sont a disposition dans cette rubrique pour faciliter votre vie d'étudiant.<p>
 <div class="row">
   {% for bonplan in derniers_bonplans reversed %}
 
@@ -9,7 +9,6 @@
 
           <h3>{{ bonplan.titre }}</h3>
           <h4>{{ bonplan.type }}</h4>
-          <h4>{{ bonplan.adresse }}</h4>
           <div class="article-content">
             {{ bonplan.contenu|truncatewords_html:40 }}
           </div>
@@ -19,7 +18,9 @@
       </div>
 
   {% empty %}
+    <div class="col-md-4">
       <p>Aucun bon-plans disponibles.</p>
+    </div>
   {% endfor %}
 </div>
 {% endblock %}

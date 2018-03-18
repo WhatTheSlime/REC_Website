@@ -22,6 +22,12 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: 'olivia';
+  src: url("/static/fonts/Olivia-Regular.woff") format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 body {
   background-color: #444;
   background-image: url("/static/img/bkgrd.png");
@@ -59,6 +65,11 @@ h3 {
   font-size: 1.25em;
   font-family: lemonmilk_lightregular;
   color: #f8cb96;
+}
+h4 {
+  font-size: 1em;
+  font-family: lemonmilk_lightregular;
+  color: #fff;
 }
 p {
   font-size: 1.2em;
@@ -146,7 +157,7 @@ a {
 }
 @media (max-width: 768px) {
   .navbar-bar li a {
-    font-size: 1.25em;
+    font-size: 1.25em min-height 100em;
     padding: 0.5em 1em;
   }
 }
@@ -181,7 +192,6 @@ a {
 .container {
   background-color: rgba(0,0,0,0.7);
   padding: 0;
-  min-height: 94vh;
 }
 .content {
   padding: 1em 1.5em 2em 1.5em;

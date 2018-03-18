@@ -3,12 +3,6 @@
 {% block content %}
 <h2>Accueil</h2>
 
-<div class="col-md-5">
-  <p> Bienvenue sur le site de REC - Radio ESIEA Club, l'association esiearque qui vous dis tout sur l'actulité de l'ESIEA, de ses associations mais aussi au reste du monde numérique.</p>
-  <p>Vous trouvez sur notre site des vidéos, articles et bon-plans qui vont vous tenir informés, vous faire découvrir des choses mais surtout vous divertir.</p>
-  <p>Aussi faite un tour sur notre Web Radio pour assistez aux émissions mensuels de notre équipe, Enjoy ;)</p>
-</div>
-
 <div id="myCarousel" class="carousel slide col-md-7" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
@@ -43,20 +37,25 @@
   </a>
 </div>
 
+<div class="col-md-5">
+  <p> Bienvenue sur le site de REC - Radio ESIEA Club, l'association esiearque qui vous dis tout sur l'actulité de l'ESIEA, de ses associations mais aussi au reste du monde numérique.</p>
+  <p>Vous trouvez sur notre site des vidéos, articles et bon-plans qui vont vous tenir informés, vous faire découvrir des choses mais surtout vous divertir.</p>
+  <p>Aussi faite un tour sur notre Web Radio pour assistez aux émissions mensuels de notre équipe, Enjoy ;)</p>
+</div>
+
 <div class="row">
   <div class="col-lg-4">
     <h2>Dernier Bon-Plans</h2>
     {% for bonplan in derniers_bonplans %}
       {% if forloop.last %}
           <h3>{{ bonplan.titre }}</h3>
-          <h3>{{ bonplan.type }}</h3>
-          <h3>{{ bonplan.adresse }}</h3>
+          <h4>{{ bonplan.type }}</h4>
           <div class="article-content">
-            {{ article.contenu|truncatewords_html:40 }}
+            {{ bonplan.contenu|truncatewords_html:40 }}
           </div>
           <br>
           <div class="article-footer">
-            <a href="{% url 'article' article.id %}" class="article-read-more">Lire la suite</a>
+            <a href="{% url 'bonplan' bonplan.id %}" class="article-read-more">Lire la suite</a>
           </div>
       {% endif %}
     {% endfor %}

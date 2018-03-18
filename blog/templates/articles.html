@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 <h2>Nos Articles</h2>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+<p>Retrouvez ici tout nos articles sur l'actualité de l'ESIEA mais pas seulement. Beaucoup d'autres sujets sont traités dans des articles passionants édités par notre équipe de rédaction.</p>
 <div class="row">
   {% for article in derniers_articles reversed %}
 
@@ -17,7 +17,9 @@
       </div>
 
   {% empty %}
+    <div class="col-md-4">
       <p>Aucun article disponibles.</p>
+    </div>
   {% endfor %}
 </div>
 {% endblock %}

@@ -22,3 +22,9 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: 'olivia';
+  src: url("/static/fonts/Olivia-Regular.woff") format('woff');
+  font-weight: normal;
+  font-style: normal;
+}

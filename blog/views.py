@@ -13,9 +13,10 @@ def index(request):
     return render(request, 'index.html')
 
 def home(request):
+    bonplans = BonPlan.objects.all()
     articles = Article.objects.all()
     videos = Video.objects.all()
-    return render(request, 'home.html', {'derniers_articles': articles, 'dernieres_videos': videos})
+    return render(request, 'home.html', {'derniers_bonplans': bonplans, 'derniers_articles': articles, 'dernieres_videos': videos})
 
 def radio(request):
     return render(request, 'radio.html')
@@ -25,8 +26,7 @@ def bonplans(request):
     return render(request, 'bonplans.html', {'derniers_bonplans': bonplans})
 
 def bonplan(request, id):
-    """ Afficher un article complet """
-    bonplan = get_object_or_404(Article, id=id)
+    bonplan = get_object_or_404(BonPlan, id=id)
     return render(request, 'bonplan.html', {'bonplan': bonplan})
 
 def articles(request):
