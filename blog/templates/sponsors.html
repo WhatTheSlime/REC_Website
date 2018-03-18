@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Nos Partenaires</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+<div class="row">
+  {% for partenaire in partenaires %}
+    <img src="{{ partenaire.logo.url }}"/>
+  {% empty %}
+      <p>Aucun Partenaires.</p>
+  {% endfor %}
+</div>
+{% endblock %}

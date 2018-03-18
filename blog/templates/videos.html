@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Nos Videos</h2>
+<p>Dans cette section vous retrouverez toutes nos dernière vidéos avec des interview, des after movies et beaucoup de nouveaux concepts originaux et ammusants</p>
+<div class="row">
+  {% for video in dernieres_videos reversed %}
+
+      <div class="col-md-4 video">
+        <h3>{{ video.titre }}</h3>
+        <iframe width="auto" height="170em" src="{{ video.ybUrl }}{{ video.ybId }}" frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
+        <br>
+      </div>
+
+  {% empty %}
+      <p>Aucune videos disponibles.</p>
+  {% endfor %}
+</div>
+{% endblock %}

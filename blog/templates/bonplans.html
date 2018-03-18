@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Nos Bon-Plans</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+<div class="row">
+  {% for bonplan in derniers_bonplans reversed %}
+
+      <div class="col-md-4">
+
+          <h3>{{ bonplan.titre }}</h3>
+          <h4>{{ bonplan.type }}</h4>
+          <h4>{{ bonplan.adresse }}</h4>
+          <div class="article-content">
+            {{ bonplan.contenu|truncatewords_html:40 }}
+          </div>
+          <div class="article-footer">
+            <a href="{% url 'bonplan' bonplan.id %}" class="article-read-more">Lire la suite</a>
+          </div>
+      </div>
+
+  {% empty %}
+      <p>Aucun bon-plans disponibles.</p>
+  {% endfor %}
+</div>
+{% endblock %}

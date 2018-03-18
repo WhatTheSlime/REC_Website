@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Accueil</h2>
+
+<div class="col-md-5">
+  <p> Bienvenue sur le site de REC - Radio ESIEA Club, l'association esiearque qui vous dis tout sur l'actulité de l'école, des association mais aussi au reste du monde numérique.</p>
+  <p>Vous trouvez sur notre site des vidéos, articles et bon-plans qui vont vous tenir informés, vous faire découvrir des choses mais surtout qui vont vous divertir.</p>
+  <p>Aussi faite un tours sur notre Web Radio pour assistez aux émissions mensuels de notre équipe ;)</p>
+</div>
+
+<div id="myCarousel" class="carousel slide col-md-7" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <div class="item active">
+      <img src="/static/img/la.jpg" alt="Los Angeles" style="width:100%;">
+    </div>
+
+    <div class="item">
+      <img src="/static/img/chicago.jpg" alt="Chicago" style="width:100%;">
+    </div>
+
+    <div class="item">
+      <img src="/static/img/ny.jpg" alt="New york" style="width:100%;">
+    </div>
+  </div>
+
+  <!-- Left and right controls -->
+  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+<div class="row">
+  <div class="col-lg-4">
+    <h2>Dernier Bon-Plans</h2>
+    {% for bonplan in derniers_bonplans %}
+      {% if forloop.last %}
+          <h3>{{ bonplan.titre }}</h3>
+          <h3>{{ bonplan.type }}</h3>
+          <h3>{{ bonplan.adresse }}</h3>
+          <div class="article-content">
+            {{ article.contenu|truncatewords_html:40 }}
+          </div>
+          <br>
+          <div class="article-footer">
+            <a href="{% url 'article' article.id %}" class="article-read-more">Lire la suite</a>
+          </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+  <div class="col-lg-4">
+    <h2>Dernier Article</h2>
+    {% for article in derniers_articles %}
+      {% if forloop.last %}
+          <h3>{{ article.titre }}</h3>
+          <div class="article-content">
+            {{ article.contenu|truncatewords_html:40 }}
+          </div>
+          <br>
+          <div class="article-footer">
+            <a href="{% url 'article' article.id %}" class="article-read-more">Lire la suite</a>
+          </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+  <div class="col-lg-4">
+    <h2>Dernière Vidéo</h2>
+    {% for video in dernieres_videos %}
+      {% if forloop.last %}
+          <h3>{{ video.titre }}</h3>
+          <div class="col-md-4">
+            <iframe width="auto" height="170em" src="{{ video.ybUrl }}{{ video.ybId }}" frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
+          </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

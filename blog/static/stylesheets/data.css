@@ -1,0 +1,24 @@
+@font-face {
+  font-family: 'lemonmilkregular';
+  src: url("/static/fonts/lemonmilk-webfont.woff2") format('woff2'), url("/static/fonts/lemonmilk-webfont.woff") format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'lemonmilk_lightregular';
+  src: url("/static/fonts/lemonmilklight-webfont.woff2") format('woff2'), url("/static/fonts/lemonmilklight-webfont.woff") format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'simson';
+  src: url("/static/fonts/simson.woff") format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'scriptMT';
+  src: url("/static/fonts/ScriptMTBold.woff") format('woff');
+  font-weight: normal;
+  font-style: normal;
+}

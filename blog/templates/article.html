@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block subtitle %}
+<h2>
+  {{ article.titre }}
+</h2>
+{% endblock %}
+{% block content %}
+
+<h3>
+  {{ article.date|date:"DATE_FORMAT" }}
+</h3>
+
+<div class="article-content">
+  {{ article.contenu|linebreaks }}
+</div>
+{% endblock %}
