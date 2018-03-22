@@ -30,7 +30,7 @@ h2
 
 h3
   font-size 1.25em
-  font-family main-font-light
+  font-family main-font
   color beige
 
 h4
@@ -123,23 +123,14 @@ text, a
         background-color beige
         color orange
 
-
 .navbar-menu-tag
   @media(max-width xs-max)
     display none
-
-.affix
-    top 0
-    z-index: 9999 !important;
-
-  .affix + .container-fluid
-    padding-top: 70px;
 
 //Body
 .container
   background-color rgba(0, 0, 0, 0.70)
   padding 0
-
 
 .content
   padding 1em 1.5em 2em 1.5em
@@ -162,8 +153,6 @@ text, a
     background-color: #ff0000
   @media(max-width xs-max)
     font-size 1.25em
-
-
 
 //Articles
 .article-content
@@ -238,3 +227,11 @@ text, a
   h3
     @media(max-width xs-max)
       display none
+
+//Partenaires
+.sponsor-content
+  h3
+    text-align center
+  img
+    height 10em
+    width auto

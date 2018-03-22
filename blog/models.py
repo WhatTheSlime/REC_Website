@@ -36,7 +36,7 @@ class Video(models.Model):
 
 class Partenaire(models.Model):
     nom = models.CharField(max_length=250, default='')
-    logo = models.ImageField(upload_to="photos/")
+    logo = models.ImageField(upload_to="logo/")
     url = models.CharField(max_length=300, null=True)
 
     def __str__(self):

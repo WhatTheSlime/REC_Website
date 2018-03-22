@@ -1,10 +1,16 @@
 {% extends "base.html" %}
 {% block content %}
 <h2>Nos Partenaires</h2>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+<p>Voici la liste des entreprises et organismes qui nous soutiennent. Un grand Merci à eux et si vous voulez en faire de même, contactez nous à : radio.esiea@gmail.com</p>
 <div class="row">
   {% for partenaire in partenaires %}
+  <div class="col-md-4">
+  <div class="sponsor-content">
+    <h3>{{ partenaire.nom }}</h3>
     <img src="{{ partenaire.logo.url }}"/>
+    <h4>Site Web : <a href="{{ partenaire.url }}">{{ partenaire.url }}</a></h4>
+  </div>
+</div>
   {% empty %}
       <p>Aucun Partenaires.</p>
   {% endfor %}
