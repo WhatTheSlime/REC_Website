@@ -1,0 +1,68 @@
+//Dimension
+xs-max = 768px
+sm-max = 970px
+md-max = 1170px
+
+//Colors
+
+white = #fff
+grey = #444
+black = #000
+wine = #5d193d
+
+bordeaux = #75292F
+rouge = #BB4952
+orange = #DC986C
+beige = #F8CB96
+
+//Fonts
+
+//main-font
+@font-face
+  font-family: 'lemonmilkregular';
+  src: url('/static/fonts/lemonmilk-webfont.woff2') format('woff2'),
+    url('/static/fonts/lemonmilk-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+//main-font-light
+@font-face
+  font-family: 'lemonmilk_lightregular';
+  src: url('/static/fonts/lemonmilklight-webfont.woff2') format('woff2'),
+       url('/static/fonts/lemonmilklight-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+//simson-font
+@font-face
+  font-family 'simson'
+  src url('/static/fonts/simson.woff') format('woff')
+  font-weight normal
+  font-style normal
+
+//MT-Script
+@font-face
+  font-family 'scriptMT'
+  src url('/static/fonts/ScriptMTBold.woff') format('woff')
+  font-weight normal
+  font-style normal
+
+main-font = lemonmilkregular
+main-font-light = lemonmilk_lightregular
+simson-font = simson
+script-MT = scriptMT
+
+//Transition Function
+transition(time)
+  -webkit-transition time /* Safari, Chrome and Opera > 12.1 */
+  -moz-transition time /* Firefox < 16 */
+  -ms-transition time /* Internet Explorer */
+  -o-transition time /* Opera < 12.1 */
+  transition time
+      //background color
+transitionType(type, time)
+  -webkit-transition type time /* Safari, Chrome and Opera > 12.1 */
+  -moz-transition type time /* Firefox < 16 */
+  -ms-transition type time /* Internet Explorer */
+  -o-transition type time /* Opera < 12.1 */
+  transition type time
