@@ -1,7 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
 <h2>Nos Bon-Plans</h2>
-<p>Tout nos conseils et bon-plans sont a disposition dans cette rubrique pour faciliter votre vie d'étudiant.<p>
+<p>
+{% for description in descriptions %}
+  {% if description.titre == "bonplans" %}
+    {{ description.contenu }}
+  {% endif %}
+{% endfor %}
+<p>
 <div class="row">
   {% for bonplan in derniers_bonplans reversed %}
 

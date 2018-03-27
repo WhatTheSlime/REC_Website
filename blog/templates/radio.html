@@ -2,7 +2,13 @@
 {% block content %}
 <div>
   <h2>La Web Radio</h2>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+  <p>
+    {% for description in descriptions %}
+      {% if description.titre == "radio" %}
+        {{ description.contenu }}
+      {% endif %}
+    {% endfor %}
+  </p>
   <div class="radionomy-player"></div>
   <iframe frameborder="0" width="340" height="110" src="http://www.xoolis.fr/dediexpcompact.php?mcom=1516908137" scrolling="no"></iframe>
 </div>

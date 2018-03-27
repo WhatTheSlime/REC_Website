@@ -6,6 +6,7 @@ from blog.models import BonPlan
 from blog.models import Article
 from blog.models import Video
 from blog.models import Partenaire
+from blog.models import Description
 from .forms import ContactForm, ArticleForm
 
 # Create your views here.
@@ -16,14 +17,17 @@ def home(request):
     bonplans = BonPlan.objects.all()
     articles = Article.objects.all()
     videos = Video.objects.all()
-    return render(request, 'home.html', {'derniers_bonplans': bonplans, 'derniers_articles': articles, 'dernieres_videos': videos})
+    descriptions = Description.objects.all()
+    return render(request, 'home.html', {'derniers_bonplans': bonplans, 'derniers_articles': articles, 'dernieres_videos': videos, 'descriptions': descriptions})
 
 def radio(request):
-    return render(request, 'radio.html')
+    descriptions = Description.objects.all()
+    return render(request, 'radio.html', {'descriptions': descriptions})
 
 def bonplans(request):
     bonplans = BonPlan.objects.all()
-    return render(request, 'bonplans.html', {'derniers_bonplans': bonplans})
+    descriptions = Description.objects.all()
+    return render(request, 'bonplans.html', {'derniers_bonplans': bonplans, 'descriptions': descriptions})
 
 def bonplan(request, id):
     bonplan = get_object_or_404(BonPlan, id=id)
@@ -31,7 +35,8 @@ def bonplan(request, id):
 
 def articles(request):
     articles = Article.objects.all()
-    return render(request, 'articles.html', {'derniers_articles': articles})
+    descriptions = Description.objects.all()
+    return render(request, 'articles.html', {'derniers_articles': articles, 'descriptions': descriptions})
 
 def article(request, id):
     """ Afficher un article complet """
@@ -40,8 +45,10 @@ def article(request, id):
 
 def videos(request):
     videos = Video.objects.all()
-    return render(request, 'videos.html', {'dernieres_videos': videos})
+    descriptions = Description.objects.all()
+    return render(request, 'videos.html', {'dernieres_videos': videos, 'descriptions': descriptions})
 
 def partenaires(request):
     partenaires = Partenaire.objects.all()
-    return render(request, 'sponsors.html', {'partenaires': partenaires})
+    descriptions = Description.objects.all()
+    return render(request, 'sponsors.html', {'partenaires': partenaires, 'descriptions': descriptions})

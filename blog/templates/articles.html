@@ -1,7 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
 <h2>Nos Articles</h2>
-<p>Retrouvez ici tout nos articles sur l'actualité de l'ESIEA mais pas seulement. Beaucoup d'autres sujets sont traités dans des articles passionants édités par notre équipe de rédaction.</p>
+<p>
+  {% for description in descriptions %}
+    {% if description.titre == "articles" %}
+      {{ description.contenu }}
+    {% endif %}
+  {% endfor %}
+</p>
 <div class="row">
   {% for article in derniers_articles reversed %}
 

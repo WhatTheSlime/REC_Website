@@ -22,7 +22,7 @@ from django.views.generic import RedirectView
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^blog/', include('blog.urls')),
-    url(r'^$', RedirectView.as_view(url='http://radioesieaclub.pythonanywhere.com/blog/accueil', permanent=False)),
+    url(r'^$', RedirectView.as_view(url='blog/accueil', permanent=False)),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

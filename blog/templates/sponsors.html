@@ -1,7 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
 <h2>Nos Partenaires</h2>
-<p>Voici la liste des entreprises et organismes qui nous soutiennent. Un grand Merci à eux et si vous voulez en faire de même, contactez nous à : radio.esiea@gmail.com</p>
+<p>
+  {% for description in descriptions %}
+    {% if description.titre == "sponsors" %}
+      {{ description.contenu }}
+    {% endif %}
+  {% endfor %}
+</p>
 <div class="row">
   {% for partenaire in partenaires %}
   <div class="col-md-4">
@@ -12,7 +18,9 @@
   </div>
 </div>
   {% empty %}
-      <p>Aucun Partenaires.</p>
+  <div class="col-md-4">
+    <p>Aucun Partenaires.</p>
+  </div>
   {% endfor %}
 </div>
 {% endblock %}

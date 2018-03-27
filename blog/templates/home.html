@@ -38,11 +38,25 @@
 </div>
 
 <div class="col-md-5">
-  <p> Bienvenue sur le site de REC - Radio ESIEA Club, l'association esiearque qui vous dis tout sur l'actulité de l'ESIEA, de ses associations mais aussi au reste du monde numérique.</p>
-  <p>Vous trouvez sur notre site des vidéos, articles et bon-plans qui vont vous tenir informés, vous faire découvrir des choses mais surtout vous divertir.</p>
-  <p>Aussi faite un tour sur notre Web Radio pour assistez aux émissions mensuels de notre équipe, Enjoy ;)</p>
+  {% for description in descriptions %}
+    {% if description.titre == "home" %}
+      {{ description.contenu }}
+    {% endif %}
+  {% endfor %}
 </div>
 
+</div class="row">
+  <h2>La Web Radio</h2>
+  <p>
+    {% for description in descriptions %}
+      {% if description.titre == "radio" %}
+        {{ description.contenu }}
+      {% endif %}
+    {% endfor %}
+  </p>
+  <div class="radionomy-player"></div>
+  <iframe frameborder="0" width="340" height="110" src="http://www.xoolis.fr/dediexpcompact.php?mcom=1516908137" scrolling="no"></iframe>
+</div>
 <div class="row">
   <div class="col-lg-4">
     <h2>Dernier Bon-Plans</h2>

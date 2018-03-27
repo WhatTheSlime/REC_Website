@@ -41,3 +41,11 @@ class Partenaire(models.Model):
 
     def __str__(self):
         return self.nom
+
+class Description(models.Model):
+
+    titre = models.CharField(max_length=200)
+    contenu = models.TextField(null=True)
+
+    def __str__(self):
+        return self.titre
