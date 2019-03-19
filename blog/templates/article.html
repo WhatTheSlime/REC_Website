@@ -9,8 +9,8 @@
 <h3>
   {{ article.date|date:"DATE_FORMAT" }}
 </h3>
-
-<div class="article-content">
+<img style="height:30em; width:auto;" src="{{article.photo.url}}"/>
+<div class="article-content"><br/>
   {{ article.contenu|linebreaks }}
 </div>
 {% endblock %}

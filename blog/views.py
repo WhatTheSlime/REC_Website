@@ -7,6 +7,7 @@ from blog.models import Article
 from blog.models import Video
 from blog.models import Partenaire
 from blog.models import Description
+from blog.models import Dedi
 from .forms import ContactForm, ArticleForm
 
 # Create your views here.
@@ -52,3 +53,8 @@ def partenaires(request):
     partenaires = Partenaire.objects.all()
     descriptions = Description.objects.all()
     return render(request, 'sponsors.html', {'partenaires': partenaires, 'descriptions': descriptions})
+
+def dedi(request):
+    dedi = Dedi.objects.all()
+    descriptions = Description.objects.all()
+    return render(request, "dedi.html", {'descriptions': descriptions})

@@ -15,6 +15,7 @@
 
           <h3>{{ article.titre }}</h3>
           <div class="article-content">
+              <img style="height:9em; width:auto; margin-bottom:0.5em;" src="{{article.photo.url}}"/>
             {{ article.contenu|truncatewords_html:40 }}
           </div>
           <div class="article-footer">
